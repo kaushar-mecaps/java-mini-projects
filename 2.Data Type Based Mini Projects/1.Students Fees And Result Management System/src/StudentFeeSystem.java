@@ -12,26 +12,26 @@ public class StudentFeeSystem {
          * total marks, percentage,
          * grade, pass/fail status, and fee details.
          */
-        String name ;
-        int rollNo ;
-        byte age ;
+        String name;
+        int rollNo;
+        byte age;
         char gender;
 
         /**
          * Variables to store marks for each subject, total marks, and percentage.
          */
-        int hindi ;
-        int english ;
-        int mathematic ;
-        int science ;
-        int socalScience ;
-        int drawing ;
+        int hindi;
+        int english;
+        int mathematic;
+        int science;
+        int socalScience;
+        int drawing;
 
         /**
          * Variable to store total marks and percentage.
          */
-        int totalMarks ;
-        float percentage ;
+        int totalMarks;
+        float percentage;
 
         Scanner input = new Scanner(System.in);
         /**
@@ -48,7 +48,8 @@ public class StudentFeeSystem {
         gender = input.next().charAt(0);
 
         /**
-         * Collecting marks for each subject and calculating total marks and percentage.
+         * Collecting marks for each subject and calculating
+         * total marks and percentage.
          */
         System.out.println("-------Student Subject Details:---------");
         System.out.print("Enter Marks in Hindi: ");
@@ -69,7 +70,8 @@ public class StudentFeeSystem {
         percentage = (totalMarks / 600.0f) * 100;
 
         /**
-         * Displaying student marks details, grade, pass/fail status, and fee details.
+         * Displaying student marks details, grade, pass/fail status,
+         * and fee details.
          */
         System.out.println("--------Student Marks details:--------");
         System.out.println("Total Marks: " + totalMarks);
@@ -96,7 +98,7 @@ public class StudentFeeSystem {
          * based on the percentage.
          */
         System.out.println("----------Student is passed: ----------");
-        boolean isPassed ;
+        boolean isPassed;
         if (percentage >= 33) {
             isPassed = true;
         } else {
@@ -106,7 +108,8 @@ public class StudentFeeSystem {
 
         /**
          * Calculating and displaying the fee details based on the percentage.
-         * If the percentage is 75 or above, the student receives a 20% scholarship.
+         * If the percentage is 75 or above,
+         * the student receives a 20% scholarship.
          */
         System.out.println("----------Student Fee details:-----------");
         int baseFees = 30000;
@@ -115,20 +118,20 @@ public class StudentFeeSystem {
         double finalFees;
         if (percentage >= 75) {
             System.out.println("Scholarship: 20%");
-             discount = baseFees * 20/100;
+            discount = baseFees * 20 / 100;
             System.out.println("Discount Amount: " + discount);
-             finalFees = baseFees - discount;
-             System.out.println("Final Fess : " + finalFees);
+            finalFees = baseFees - discount;
+            System.out.println("Final Fess : " + finalFees);
         } else {
             System.out.println("Scholarship: 0%");
-             discount = 0;
+            discount = 0;
             System.out.println("Discount Amount: " + discount);
-             finalFees = baseFees - discount;
-             System.out.println("Final Fess : " + finalFees);
+            finalFees = baseFees - discount;
+            System.out.println("Final Fess : " + finalFees);
         }
         /**
          * Closing the scanner to prevent resource leaks.
          */
-            input.close();
+        input.close();
     }
 }
